@@ -22,6 +22,7 @@ interface Guest {
 }
 
 export interface Event {
+  slug: string;
   id: string;
   dressCode: string;
   summary: string;
@@ -54,10 +55,11 @@ interface EventResponse {
   invitation?: Invitation;
 }
 
-export const onGet: RequestHandler<any> = async () => {
+export const onGet: RequestHandler<EventResponse> = async () => {
   // put your DB access here, we are hard coding a response for simplicity.
   return {
     event: {
+      slug: "brenda-jose-092323",
       id: Math.random().toString(),
       dressCode: "Formal",
       summary:
@@ -72,6 +74,7 @@ export const onGet: RequestHandler<any> = async () => {
       address: "Calle Paraiso del Estero 467",
       city: "Paraiso del Estero",
       state: "Ver",
+      zip: 94299,
       phone: "2299320000",
       lat: "19°05'14.1\"N",
       lng: "+96°06'16.0\"W",
