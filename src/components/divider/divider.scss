@@ -1,0 +1,22 @@
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #6bb468;
+  margin: 1.5rem 0.5rem;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #6bb468;
+  }
+
+  &:not(:empty)::before {
+    margin-right: 1rem;
+  }
+
+  &:not(:empty)::after {
+    margin-left: 1rem;
+  }
+}
