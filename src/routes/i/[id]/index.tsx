@@ -9,6 +9,7 @@ import {
 import { RequestHandler, useEndpoint } from "@builder.io/qwik-city";
 import format from "date-fns/format";
 import es from "date-fns/locale/es";
+import { Card } from "~/components/card/card";
 import { ConfirmModal } from "~/components/confirm-modal/confirm-modal";
 import { Divider } from "~/components/divider/divider";
 import { LocationCard } from "~/components/location/location";
@@ -119,18 +120,7 @@ export default component$(() => {
           )}
           <div class="invitation-page-layout">
             <div class="invitation">
-              <div
-                class="card"
-                style="background-image: url('/backgrounds/background-1.jpeg')"
-              >
-                <h1 class="title">
-                  {data.event.bride.split(" ")[0]} &{" "}
-                  {data.event.groom.split(" ")[0]}
-                </h1>
-                <a class="btn btn-mobile" href="#information">
-                  Reservar
-                </a>
-              </div>
+              <Card event={data.event} />
             </div>
             <div class="information" id="information">
               <div class="layout">
